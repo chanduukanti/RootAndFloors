@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scroll_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/project_detail_background"
+        android:paddingBottom="@dimen/padding_default_2"
+        android:paddingEnd="@dimen/padding_default_2"
+        android:paddingStart="@dimen/padding_default_2" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <!-- For showing Images about project -->
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/image_pager"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/image_pager_layout_height"
+                android:layout_marginTop="@dimen/margin_default_1"
+                android:background="@drawable/style_layouts" />
+            <!-- For showing  basic details of project like name and locatility and city etc..start -->
+
+            <RelativeLayout
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_pager"
+                android:layout_marginTop="@dimen/margin_default_1"
+                android:background="@drawable/style_layouts"
+                android:paddingEnd="@dimen/padding_default_1"
+                android:paddingStart="@dimen/padding_default_1" >
+
+                <TextView
+                    android:id="@+id/project_name1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_default_1"
+                    android:layout_marginTop="@dimen/margin_default_1"
+                    android:text="@string/default_projectName"
+                    android:textSize="@dimen/text_size_16"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/add_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/project_name1"
+                    android:layout_marginBottom="@dimen/margin_default_1"
+                    android:paddingBottom="@dimen/padding_default_1"
+                    android:text="@string/default_address" />
+            </RelativeLayout>
+            <!-- For showing  basic details of project like name and locatility and city etc..end -->
+
+
+            <!-- For showing  key details of project like price  and area and city and possession etc..start -->
+
+            <LinearLayout
+                android:id="@+id/key_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/address"
+                android:layout_marginTop="@dimen/margin_default_1"
+                android:background="@drawable/style_layouts"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/padding_default_1"
+                android:paddingEnd="@dimen/padding_default_1"
+                android:paddingStart="@dimen/padding_default_1" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_default_1"
+                    android:layout_marginTop="@dimen/margin_default_1" >
+
+                    <TextView
+                        android:id="@+id/key_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="@dimen/padding_default_1"
+                        android:paddingStart="@dimen/padding_default_1"
+                        android:text="@string/key_info_label"
+                        android:textSize="@dimen/text_size_16"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_default_1"
+                    android:paddingEnd="@dimen/padding_default_1"
+                    android:paddingStart="@dimen/padding_default_1" >
+
+                    <TableRow
+                        android:id="@+id/firstRowNames"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/propertyType"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/project_type" >
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/cityname"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/default_city" >
+                        </TextView>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/firstRowValues"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/firstRowNames" >
+
+                        <TextView
+                            android:id="@+id/property_type_value"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/project_type_default_value" >
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/city_value"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:text="@string/default_city" >
+                        </TextView>
+                    </TableRow>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_default_1"
+                    android:paddingEnd="@dimen/padding_default_1"
+                    android:paddingStart="@dimen/padding_default_1" >
+
+                    <TableRow
+                        android:id="@+id/secondRowNames"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/availableUnits"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/available_units_label" >
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/blocks"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/noof_blocks" >
+                        </TextView>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/secondRowValues"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/secondRowNames" >
+
+                        <TextView
+                            android:id="@+id/availableunitsvalue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/available_units_value" >
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/blocks_value"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:text="@string/noof_blocks_value" >
+                        </TextView>
+                    </TableRow>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_default_1"
+                    android:paddingEnd="@dimen/padding_default_1"
+                    android:paddingStart="@dimen/padding_default_1" >
+
+                    <TableRow
+                        android:id="@+id/thirdRowNames"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/status"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/project_status" >
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/possesion"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/possesion_label" >
+                        </TextView>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/thirdRowValues"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/thirdRowNames" >
+
+                        <TextView
+                            android:id="@+id/statusValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/project_status_value" >
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/possesionDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:text="@string/possesion_value" >
+                        </TextView>
+                    </TableRow>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_default_1"
+                    android:paddingEnd="@dimen/padding_default_1"
+                    android:paddingStart="@dimen/padding_default_1" >
+
+                    <TableRow
+                        android:id="@+id/fourthRowNames"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/priceperunit"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/priceperunits_label" >
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/coveredArea"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/covered_area_label" >
+                        </TextView>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/fourthRowValues"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/fourthRowNames" >
+
+                        <TextView
+                            android:id="@+id/priceperunitvalue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/priceperunits_value" >
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/coveredAreaValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:text="@string/covered_area_value" >
+                        </TextView>
+                    </TableRow>
+                </RelativeLayout>
+            </LinearLayout>
+            <!-- For showing  key details of project like price  and area and city and possession etc..end -->
+
+
+            <!-- For showing  amenties of this project start -->
+
+            <RelativeLayout
+                android:id="@+id/amenities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/key_info"
+                android:layout_marginTop="@dimen/margin_default_1"
+                android:background="@drawable/style_layouts"
+                android:paddingEnd="@dimen/padding_default_2"
+                android:paddingStart="@dimen/padding_default_2" >
+
+                <TextView
+                    android:id="@+id/aminitiesText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/amenties_default"
+                    android:textSize="@dimen/text_size_16"
+                    android:textStyle="bold" >
+                </TextView>
+
+                <HorizontalScrollView
+                    android:id="@+id/amenities_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/aminitiesText"
+                    android:layout_marginTop="@dimen/margin_default_1" >
+
+                    <TextView
+                        android:id="@+id/amenitiesText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_default_1"
+                        android:text="@string/amenties_default" />
+                </HorizontalScrollView>
+            </RelativeLayout>
+
+            <!-- For showing  amenties of this project end -->
+
+
+            <!-- For showing  description and specification of this project start -->
+
+            <LinearLayout
+                android:id="@+id/descriptionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/amenities"
+                android:layout_marginTop="@dimen/margin_default_1"
+                android:background="@drawable/style_layouts"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/padding_default_1"
+                android:paddingEnd="@dimen/padding_default_2"
+                android:paddingStart="@dimen/padding_default_2" >
+
+                <TextView
+                    android:id="@+id/descriptionLabeltext"
+                    android:layout_width="@dimen/descriptionLabeltext_width"
+                    android:layout_height="wrap_content"
+                    android:text="@string/desc_spec_label"
+                    android:textSize="@dimen/text_size_16"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/dividerline"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginTop="2dip"
+                    android:background="@color/grey" >
+                </View>
+
+                <TextView
+                    android:id="@+id/descriptiontext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/desc_spec_label" />
+            </LinearLayout>
+
+            <!-- </LinearLayout> -->
+            <!-- For showing  description and specification of this project end -->
+
+
+            <!-- For showing  location on map  of this project start -->
+
+
+            <!-- For showing  location on map  of this project  end -->
+
+
+            <!-- For showing  builder info of this project start -->
+
+            <LinearLayout
+                android:id="@+id/builderInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/descriptionLayout"
+                android:layout_marginTop="@dimen/margin_default_1"
+                android:background="@drawable/style_layouts"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/padding_default_1"
+                android:paddingEnd="@dimen/padding_default_2"
+                android:paddingStart="@dimen/padding_default_2" >
+
+                <RelativeLayout
+                    android:id="@+id/builderinfo_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_default_1" >
+
+                    <TextView
+                        android:id="@+id/builderinfoLabeltext"
+                        android:layout_width="@dimen/descriptionLabeltext_width"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/builder_info_default"
+                        android:textSize="@dimen/text_size_16"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/builderinfoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible" >
+
+                    <TextView
+                        android:id="@+id/builderdescriptiontext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/builder_info_default" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/builderlogonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/builderInfo"
+                android:layout_marginTop="@dimen/margin_default_1"
+                android:background="@drawable/style_layouts"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/padding_default_1"
+                android:paddingEnd="@dimen/padding_default_2"
+                android:paddingStart="@dimen/padding_default_2" >
+
+                <ImageView
+                    android:id="@+id/builder_logo"
+                    android:layout_width="@dimen/builder_logo_dimen"
+                    android:layout_height="@dimen/builder_logo_dimen"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/roofnfloor" />
+
+                <LinearLayout
+                    android:id="@+id/buildernameLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/builder_logo"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/buildernametext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_default_1"
+                        android:text="@string/builder_name"
+                        android:textSize="@dimen/text_size_16"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/builderurltext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/buider_url"
+                        android:textSize="@dimen/text_size_16" />
+                </LinearLayout>
+            </RelativeLayout>
+            <!--
+            <LinearLayout
+                android:id="@+id/specificationlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/builderlogonName"
+                android:layout_marginTop="@dimen/margin_default_1"
+                android:background="@drawable/style_layouts"
+                android:orientation="vertical"
+                android:paddingBottom="5dp"
+                android:paddingEnd="10dip"
+                android:paddingStart="10dip"
+                android:visibility="visible" >
+
+                <TextView
+                    android:id="@+id/specification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_default_1"
+                    android:text="@string/specification_label"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginTop="2dip"
+                    android:background="#cecece" >
+                </View>
+
+                <TextView
+                    android:id="@+id/specificationtext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/specification_label" />
+            </LinearLayout>
+            -->
+            <!-- For showing  builder info of this project end -->
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
